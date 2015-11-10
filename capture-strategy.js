@@ -3,8 +3,8 @@ var casper = require('casper').create({
     'node_modules/es5-shim/es5-shim.js'
   ],
   viewportSize: {
-    width: 960,
-    height: 800
+    width: 512,
+    height: 512
   },
   verbose: true,
   logLevel: "debug"
@@ -19,7 +19,8 @@ casper.thenEvaluate(function setBackground() {
 })
 
 casper.wait(5000, function captureScreenshot() {
-  var filename = this.getHTML('#strategy').toLowerCase().replace(/\s/g, '-') || 'fallback'
+  var strategy = this.getHTML('#strategy')
+  var filename = strategy.toLowerCase().replace(/\s/g, '-') || 'fallback'
   this.capture('assets/' + filename + '.png')
 })
 

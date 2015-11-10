@@ -12,7 +12,9 @@
   "dependencies": {
     "casperjs": "1.1.0-beta3",
     "es5-shim": "4.3.0",
+    "lodash": "^3.10.1",
     "phantomjs": "^1.9.18",
-    "slimerjs": "0.9.6"
+    "slimerjs": "0.9.6",
+    "twit": "^2.1.1"
   }
 }
