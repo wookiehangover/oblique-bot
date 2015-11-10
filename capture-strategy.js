@@ -19,7 +19,7 @@ casper.thenEvaluate(function setBackground() {
 })
 
 casper.wait(5000, function captureScreenshot() {
-  var filename = this.getHTML('#strategy').toLowerCase().replace(/\s/g, '-')
+  var filename = this.getHTML('#strategy').toLowerCase().replace(/\s/g, '-') || 'fallback'
   this.capture('assets/' + filename + '.png')
 })
 
