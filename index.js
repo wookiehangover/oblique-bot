@@ -10,7 +10,8 @@ let usedStategies = require('./used-strategies.json')
 function getFile(files) {
   var name = files[_.random(files.length - 1)]
 
-  if (usedStategies.indexOf(name) === files.length - 1) {
+  // Don't repeat yourself. That's your only rule.
+  if (usedStategies.indexOf(name) >= files.length - 10) {
     return getFile(files)
   }
 
