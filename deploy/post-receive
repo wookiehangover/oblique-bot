@@ -2,4 +2,7 @@
 set -e; set -o pipefail;
 GIT_WORK_TREE=/home/oblique-bot/app git checkout -f
 cp /home/oblique-bot/config.js /home/oblique-bot/app
+if [ ! -f /home/oblique-bot/app/used-strategies.json ]; then
+  echo "[]" > /home/oblique-bot/app/used-strategies.json
+fi
 cd /home/oblique-bot/app && NODE_ENV=production npm install
