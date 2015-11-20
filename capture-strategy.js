@@ -1,13 +1,8 @@
 var casper = require('casper').create({
-  clientScripts: [
-    'node_modules/es5-shim/es5-shim.js'
-  ],
   viewportSize: {
     width: 512,
     height: 512
-  },
-  verbose: true,
-  logLevel: "debug"
+  }
 })
 
 casper.start('http://obliquestrategies.website', function enableUnsplash() {
