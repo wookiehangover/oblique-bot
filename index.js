@@ -6,17 +6,7 @@ let T = new Twit(require('./config.js'))
 let fs = require('fs')
 let path = require('path')
 let usedStategies = require('./used-strategies.json')
-
-function getFile(files) {
-  var name = files[_.random(files.length - 1)]
-
-  // Don't repeat yourself. That's your only rule.
-  if (usedStategies.indexOf(name) >= files.length - 10) {
-    return getFile(files)
-  }
-
-  return name
-}
+let getFile = require('./lib/get-file')
 
 function getStrategy(done) {
   fs.readdir(path.join(__dirname, 'assets'), function(err, files) {
@@ -25,7 +15,10 @@ function getStrategy(done) {
       return
     }
 
-    var name = getFile(_.without(files, '.gitkeep', '.DS_Store'))
+    let name = getFile(
+      usedStategies,
+      _.without(files, '.gitkeep', '.DS_Store')
+    )
     done(name)
   })
 }

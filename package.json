@@ -4,7 +4,7 @@
   "description": "wookiehangover",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha index-test.js",
     "capture": "casperjs --engine=slimerjs capture-strategy.js"
   },
   "author": "",
@@ -16,5 +16,9 @@
     "phantomjs": "^1.9.18",
     "slimerjs": "0.9.6",
     "twit": "^2.1.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
   }
 }
